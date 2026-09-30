@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informativa sulla privacy — Riassumi Pagina AI</title>
+  <style>
+    :root { --accent: #5b6cff; --text: #1c2230; --dim: #5b6478; --border: #e3e7ef; --bg: #ffffff; --code: #f4f6fb; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f7f8fc;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    main {
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 40px 44px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    h1 { font-size: 26px; line-height: 1.25; margin: 0 0 4px; letter-spacing: -0.01em; }
+    h2 { font-size: 18px; margin: 32px 0 10px; padding-top: 8px; border-top: 1px solid var(--border); }
+    h3 { font-size: 15.5px; margin: 20px 0 6px; color: var(--accent); }
+    p, li { color: var(--text); }
+    .updated { color: var(--dim); font-size: 14px; margin: 0 0 20px; }
+    code { background: var(--code); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: 14px; }
+    blockquote { margin: 16px 0; padding: 12px 16px; background: var(--code); border-left: 3px solid var(--accent); border-radius: 8px; color: #333; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+    th, td { text-align: left; padding: 10px 12px; border: 1px solid var(--border); vertical-align: top; }
+    th { background: var(--code); }
+    a { color: var(--accent); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+    @media (max-width: 560px) { main { margin: 0; border-radius: 0; padding: 24px 20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Informativa sulla privacy — Riassumi Pagina AI</h1>
+    <p class="updated">Ultimo aggiornamento: 30 settembre 2026</p>
+
+    <p>Riassumi Pagina AI è un'estensione per browser che riassume, su tua richiesta, la pagina web o
+    il documento PDF che stai leggendo. Questa informativa spiega quali dati l'estensione tratta,
+    dove finiscono e quali sono i tuoi diritti.</p>
+
+    <h2>In sintesi</h2>
+    <ul>
+      <li>L'estensione <strong>agisce solo quando premi &laquo;Riassumi&raquo;</strong>. Non monitora la tua navigazione e non legge pagine in background.</li>
+      <li>Il contenuto che scegli di riassumere viene inviato <strong>esclusivamente al provider AI che hai configurato</strong> (Gemini, Groq, OpenRouter, OpenAI, Anthropic) oppure <strong>resta sul tuo computer</strong> se usi Ollama in locale.</li>
+      <li>La tua <strong>chiave API è salvata solo sul tuo dispositivo</strong> (<code>chrome.storage.local</code>) e non viene mai inviata allo sviluppatore.</li>
+      <li><strong>Lo sviluppatore non raccoglie, non vede e non conserva alcun dato.</strong> Non esistono server dello sviluppatore.</li>
+    </ul>
+
+    <h2>1. Titolare del trattamento</h2>
+    <blockquote>Nome: <strong>desirèe</strong><br />Contatto: <strong>desyhack@gmail.com</strong></blockquote>
+
+    <h2>2. Quali dati vengono trattati</h2>
+    <h3>a) Contenuto della pagina o del documento</h3>
+    <p>Quando premi <strong>&laquo;Riassumi&raquo;</strong>, l'estensione legge il testo della scheda attiva &mdash; il contenuto della pagina web, la trascrizione di un video YouTube, oppure il testo di un PDF aperto nella scheda &mdash; e lo invia al <strong>provider AI da te scelto</strong> per generare il riassunto e per rispondere alle eventuali domande nella chat &laquo;Chiedi sul contenuto&raquo;.</p>
+    <p>Questo trattamento avviene <strong>solo per la singola operazione richiesta</strong>: il testo non viene salvato dallo sviluppatore né conservato dall'estensione.</p>
+
+    <h3>b) Chiave API</h3>
+    <p>La chiave API che inserisci nelle impostazioni è salvata <strong>localmente sul tuo dispositivo</strong> tramite <code>chrome.storage.local</code>. È usata solo per autenticare le chiamate al provider che hai scelto. Non è mai trasmessa allo sviluppatore.</p>
+
+    <h3>c) Impostazioni</h3>
+    <p>Provider scelto, nome del modello, lingua del riassunto e chiave Gemini per OCR sono salvati localmente sul tuo dispositivo.</p>
+
+    <h3>d) Nessun tracciamento</h3>
+    <p>L'estensione <strong>non</strong> usa analytics, telemetria, pubblicità o cookie di tracciamento. Non raccoglie cronologia di navigazione né dati di utilizzo.</p>
+
+    <h2>3. A chi vengono inviati i dati (destinatari)</h2>
+    <p>I dati (contenuto da riassumere e chiave API) sono inviati <strong>direttamente dal tuo browser</strong> al provider AI selezionato. Lo sviluppatore non è intermediario e non riceve nulla. I provider interessati, con le rispettive informative:</p>
+    <table>
+      <tr><th>Provider</th><th>Privacy</th></tr>
+      <tr><td>Google Gemini</td><td><a href="https://ai.google.dev/gemini-api/terms">ai.google.dev/gemini-api/terms</a></td></tr>
+      <tr><td>Groq</td><td><a href="https://groq.com/privacy-policy/">groq.com/privacy-policy</a></td></tr>
+      <tr><td>OpenRouter</td><td><a href="https://openrouter.ai/privacy">openrouter.ai/privacy</a></td></tr>
+      <tr><td>OpenAI</td><td><a href="https://openai.com/privacy">openai.com/privacy</a></td></tr>
+      <tr><td>Anthropic</td><td><a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a></td></tr>
+      <tr><td>Ollama (locale)</td><td>Nessun invio: tutto resta sul tuo computer</td></tr>
+    </table>
+    <blockquote><strong>Nota sui piani gratuiti:</strong> alcuni provider (es. il piano gratuito di Google Gemini) possono utilizzare i contenuti inviati per migliorare i propri prodotti. Se non desideri questo, usa un provider con condizioni adeguate oppure Ollama in locale.</blockquote>
+
+    <h2>4. Finalità e base giuridica</h2>
+    <p>Il trattamento avviene esclusivamente per <strong>eseguire la funzione richiesta dall'utente</strong> (riassumere il contenuto) e per <strong>salvare le sue preferenze in locale</strong>. La base giuridica è il consenso dell'utente, espresso quando preme &laquo;Riassumi&raquo; e quando inserisce la propria chiave API.</p>
+
+    <h2>5. Conservazione</h2>
+    <p>Lo sviluppatore <strong>non conserva alcun dato</strong>. La chiave API e le impostazioni restano sul tuo dispositivo finché non le cancelli (svuotando i campi nelle impostazioni) o finché non disinstalli l'estensione. La disinstallazione rimuove tutti i dati locali.</p>
+
+    <h2>6. Sicurezza</h2>
+    <p>Le comunicazioni con i provider avvengono tramite <strong>HTTPS</strong>. La chiave API viaggia solo verso il provider scelto e non verso terzi. Il codice dell'estensione è leggibile e non include chiavi o segreti dello sviluppatore.</p>
+
+    <h2>7. I tuoi diritti</h2>
+    <p>Puoi in qualsiasi momento:</p>
+    <ul>
+      <li>cancellare la chiave API e le impostazioni dalle impostazioni dell'estensione;</li>
+      <li>disinstallare l'estensione, eliminando tutti i dati locali;</li>
+      <li>revocare la chiave API dal pannello del provider.</li>
+    </ul>
+    <p>Per esercitare i diritti previsti dal GDPR (accesso, cancellazione, portabilità, ecc.) puoi contattare il titolare indicato al punto 1. Poiché lo sviluppatore non detiene dati personali, la maggior parte dei dati è già sotto il tuo controllo diretto.</p>
+
+    <h2>8. Minori</h2>
+    <p>L'estensione non è destinata a minori di 13 anni (o dell'età minima prevista dalla legge locale) e non raccoglie consapevolmente dati da minori.</p>
+
+    <h2>9. Limitazioni d'uso (Limited Use)</h2>
+    <p>L'uso delle informazioni ricevute dalle API di Google avverrà nel rispetto della Chrome Web Store User Data Policy, inclusi i requisiti di Limited Use.</p>
+    <blockquote><em>The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</em></blockquote>
+
+    <h2>10. Modifiche all'informativa</h2>
+    <p>Questa informativa può essere aggiornata. La data di &laquo;ultimo aggiornamento&raquo; in cima indica la versione corrente. Le modifiche sostanziali saranno riflesse in questa pagina.</p>
+
+    <h2>11. Contatti</h2>
+    <p>Per domande sulla privacy: <strong>desyhack@gmail.com</strong></p>
+
+    <hr />
+    <p class="updated">Riassumi Pagina AI &mdash; estensione per browser.</p>
+  </main>
+</body>
+</html>

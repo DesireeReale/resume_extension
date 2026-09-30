@@ -1,0 +1,33 @@
+# Sistema operativo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp
+*~
+
+# Node (se in futuro aggiungi tooling)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ambiente e segreti — non committare MAI chiavi API
+.env
+.env.*
+*.key
+secrets.*
+
+# Pacchetti di release locali
+*.zip
+*.crx
+*.pem
+
+# Cartella temporanea
+tmp/
+temp/

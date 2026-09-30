@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riassumi Pagina AI</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">✦</span>
+        <div>
+          <h1>Riassumi Pagina</h1>
+          <p class="subtitle">Sintesi istantanea con AI</p>
+        </div>
+      </div>
+      <button id="toggleSettings" class="icon-btn" title="Impostazioni" aria-label="Apri impostazioni">⚙</button>
+    </header>
+
+    <!-- Pannello impostazioni -->
+    <section id="settings" class="settings hidden">
+      <label class="field">
+        <span>Provider AI</span>
+        <select id="provider">
+          <option value="gemini">Google Gemini — gratis</option>
+          <option value="groq">Groq — gratis</option>
+          <option value="openrouter">OpenRouter — modelli gratis</option>
+          <option value="local">Locale (Ollama) — nessuna chiave</option>
+          <option value="openai">OpenAI</option>
+          <option value="anthropic">Anthropic (Claude)</option>
+        </select>
+      </label>
+
+      <label class="field" id="apiKeyField">
+        <span>Chiave API</span>
+        <input id="apiKey" type="password" placeholder="Incolla qui la chiave API" autocomplete="off" spellcheck="false" />
+      </label>
+
+      <label class="field">
+        <span>Modello</span>
+        <input id="model" type="text" spellcheck="false" />
+      </label>
+
+      <label class="field">
+        <span>Lingua del riassunto</span>
+        <select id="language">
+          <option value="italiano">Italiano</option>
+          <option value="inglese">Inglese</option>
+          <option value="spagnolo">Spagnolo</option>
+          <option value="francese">Francese</option>
+          <option value="tedesco">Tedesco</option>
+        </select>
+      </label>
+
+      <label class="field" id="geminiOcrField">
+        <span>Chiave Gemini per OCR</span>
+        <input id="geminiOcrKey" type="password" placeholder="Solo per OCR di PDF scansionati/immagini" autocomplete="off" spellcheck="false" />
+      </label>
+
+      <p class="hint">
+        La chiave viene salvata solo in locale (<code>chrome.storage.local</code>) e non lascia il tuo
+        computer, tranne che per la chiamata al provider scelto.
+      </p>
+      <p class="hint">
+        La <strong>chiave Gemini per OCR</strong> serve solo per i PDF <em>scansionati</em> (foto di
+        pagine) e per le immagini: il testo viene letto con Gemini Vision. È gratuita su
+        <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">aistudio.google.com/apikey</a>.
+        Se il tuo account non riceve una chiave, in AI Studio vai su <em>Dashboard → Progetti →
+        Importa progetti</em> e crea la chiave lì.
+      </p>
+
+      <button id="saveSettings" class="btn secondary full">Salva impostazioni</button>
+    </section>
+
+    <main class="main">
+      <div id="pdfBadge" class="doc-badge hidden">📄 PDF rilevato nella scheda</div>
+      <button id="summarizeBtn" class="btn primary full">
+        <span class="btn-label">Riassumi</span>
+      </button>
+
+      <div id="status" class="status hidden" role="status" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span>
+        <span id="statusText">Analisi della pagina…</span>
+      </div>
+
+      <div id="error" class="error hidden" role="alert"></div>
+
+      <div id="result" class="result hidden">
+        <div class="result-head">
+          <h2>Riassunto</h2>
+          <button id="copyBtn" class="icon-btn small" title="Copia il riassunto" aria-label="Copia">⧉</button>
+        </div>
+        <div id="resultNote" class="result-note hidden"></div>
+        <div id="resultText" class="result-text"></div>
+      </div>
+
+      <section id="chat" class="chat hidden">
+        <div class="chat-head">
+          <h2>Chiedi sul contenuto</h2>
+        </div>
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+        <form id="chatForm" class="chat-form">
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Fai una domanda su pagina o video…"
+            autocomplete="off"
+          />
+          <button id="chatSend" class="btn primary" type="submit">Invia</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="vendor/pdf.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
